@@ -10,6 +10,7 @@ The programme schedule often goes in a pattern like music, talk, interview, and 
 ![Block Diagram](https://github.com/cksajil/MusicRJ/blob/master/Images/BlockDGMSmall.png )
 
 **Dataset**: The project use the dataset **[DataGTZAN music/speech collection](http://opihi.cs.uvic.ca/sound/music_speech.tar.gz)**. This dataset should be downloaded and saved to the *Data* folder. The folder structure should be as shown below. Here the all the wav audio files should be extracted to the *Corpus* folder.
+
 .
 ├── Data
 │   └── gtzan-musicspeech-collection
@@ -17,6 +18,7 @@ The programme schedule often goes in a pattern like music, talk, interview, and 
 │       │   ├── *.wav
 │       └── datalables.txt
 ├── DataProcessing.ipynb
+
 
 **Excecute the following Jupyter Notebooks/Scripts in order**
 	 1. DataProcessing.ipynb
