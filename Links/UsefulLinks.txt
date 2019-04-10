@@ -1,0 +1,9 @@
+http://aqibsaeed.github.io/2016-09-03-urban-sound-classification-part-1/
+https://urbansounddataset.weebly.com/
+https://towardsdatascience.com/urban-sound-classification-part-1-99137c6335f9
+https://github.com/mtobeiyf/audio-classification/blob/master/feat_extract.py
+
+
+
+
+
