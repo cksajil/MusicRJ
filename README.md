@@ -7,4 +7,4 @@
 
 The programme schedule often goes in a pattern like music, talk, interview, and chat and so on. It would be nice if we can have a personal AI assistant (Mobile Application) which listens to such programs, records music which might be interesting to us, gather and summarise information from the Radio Jockey (RJ) talks. Since I have my background in audio signal processing, I was particularly interested in this project and wanted to give a try. 
 
-![Block Diagram](https://github.com/cksajil/MusicRJ/blob/master/Images/BlockDGM.png =250x)
+![Block Diagram](https://github.com/cksajil/MusicRJ/blob/master/Images/BlockDGM.png =500x400)
