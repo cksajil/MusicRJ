@@ -9,7 +9,7 @@ The programme schedule often goes in a pattern like music, talk, interview, and 
 
 ![Block Diagram](https://github.com/cksajil/MusicRJ/blob/master/Images/BlockDGMSmall.png)
 
-**Dataset**: The project use the dataset **[DataGTZAN music/speech collection](http://opihi.cs.uvic.ca/sound/music_speech.tar.gz)**. This dataset should be downloaded and saved to the *Data* folder. The folder structure should be as shown below. Here the all the wav audio files should be extracted to the *Corpus* folder.
+**Dataset**: The project use the dataset **[DataGTZAN music/speech collection](http://opihi.cs.uvic.ca/sound/music_speech.tar.gz)**. This dataset is included in this repository. The folder structure is as shown below. Here the all the wav audio files should be extracted to the *Corpus* folder.
 
 ![Folder Structure](https://github.com/cksajil/MusicRJ/blob/master/Images/Folders.png)
 
