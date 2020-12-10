@@ -12,16 +12,15 @@ The programme schedule often goes in a pattern like music, talk, interview, and 
 
 ![Block Diagram](https://github.com/cksajil/MusicRJ/blob/master/Images/BlockDGMSmall.png)
 
-**Dataset**: The project use the dataset **[DataGTZAN music/speech collection](http://opihi.cs.uvic.ca/sound/music_speech.tar.gz)**. This dataset is included in this repository. The folder structure is as shown below. Here the all the wav audio files should be extracted to the *Corpus* folder.
+**Dataset**: The project use the dataset **[DataGTZAN music/speech collection](http://opihi.cs.uvic.ca/sound/music_speech.tar.gz)**. All the wav audio files should be extracted to the *Data/Files* folder.
 
-![Folder Structure](https://github.com/cksajil/MusicRJ/blob/master/Images/Folders.png)
-
+Install dependency libraries using virtual environment from the **requirements** file
 
 **Excecute the following Jupyter Notebooks/Scripts in order**
 
-	 1. DataProcessing.ipynb
-	 2. DataModeling.ipynb
-	 3. RealtimeTest.ipynb
+	 1. dataProcessing.py
+	 2. dlModeling.py
+	 3. realTimeTest.py or realTimeTest.ipynb
 
 
 
