@@ -1,23 +1,14 @@
 import librosa
 import numpy as np
 import pandas as pd
+from tqdm import tqdm
+from utils.general import strided_app
 
 basicdata = pd.read_csv('./Data/BasicData.csv').sample(frac=1)
 CorpusPath = './Data/Files/'
 Corpusfiles = basicdata['Filename'].values
 fn = len(Corpusfiles)
 
-def strided_app(a, L, S):  
-    """
-    Function to split audio as overlapping segments
-    L : Window length
-    S : Stride (L/stepsize)
-    """
-    nrows = ((a.size-L)//S)+1
-    n = a.strides[0]
-    return np.lib.stride_tricks.as_strided(a,\
-        shape=(nrows,L),\
-        strides=(S*n,n))
 
 # Segement size and overlapp offset value
 frameS = 256
@@ -28,8 +19,7 @@ spectrumData = np.empty((0, frameS), int)
 i = 0
 Fcol = []
 
-for file in Corpusfiles:
-    print(str(fn-i)+' to go',end='\r', flush=True)
+for file in tqdm(Corpusfiles):
     i+=1
     x, Fs = librosa.load(CorpusPath+file)
     segments = strided_app(x, L=frameS, S=offset)
