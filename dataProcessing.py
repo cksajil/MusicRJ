@@ -9,7 +9,6 @@ CorpusPath = './Data/Files/'
 Corpusfiles = basicdata['Filename'].values
 fn = len(Corpusfiles)
 
-
 # Segement size and overlapp offset value
 frameS = 256
 offset = 64
