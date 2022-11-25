@@ -36,6 +36,7 @@ source envname/bin/activate
 *Installing Packages*
 ```console
 python -m pip install -r requirements.txt
+```
 
 **Excecute the following Jupyter Notebooks/Scripts in order**
 
