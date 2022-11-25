@@ -24,4 +24,5 @@ scipy==1.9.3
 six==1.16.0
 soundfile==0.11.0
 threadpoolctl==3.1.0
+tqdm==4.64.1
 urllib3==1.26.13
