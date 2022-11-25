@@ -15,13 +15,30 @@ The programme schedule often goes in a pattern like music, talk, interview, and 
 
 **Dataset**: The project use the dataset **[DataGTZAN music/speech collection](http://opihi.cs.uvic.ca/sound/music_speech.tar.gz)**. All the wav audio files should be extracted to the *Data/Files* folder.
 
-Install dependency libraries using virtual environment from the **requirements** file
+**Python Version**
+
+Python 3.9.12
+
+**Virtual Environment**
+
+*Installing Virtual Environment*
+```console
+python -m pip install --user virtualenv
+```
+*Creating New Virtual Environment*
+```console
+python -m venv envname
+```
+*Activating Virtual Environment*
+```console
+source envname/bin/activate
+```
+*Installing Packages*
+```console
+python -m pip install -r requirements.txt
 
 **Excecute the following Jupyter Notebooks/Scripts in order**
 
 	 1. dataProcessing.py
 	 2. dlModeling.py
 	 3. realTimeTest.py or realTimeTest.ipynb
-
-
-
