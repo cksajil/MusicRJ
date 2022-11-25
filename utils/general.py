@@ -1,3 +1,5 @@
+import numpy as np
+
 def strided_app(a, L, S):  
     """
     Function to split audio as overlapping segments
