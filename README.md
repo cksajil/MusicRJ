@@ -42,4 +42,4 @@ python -m pip install -r requirements.txt
 
 	 1. dataProcessing.py
 	 2. dlModeling.py
-	 3. realTimeTest.py or realTimeTest.ipynb
+	 3. realTimeTest.py
