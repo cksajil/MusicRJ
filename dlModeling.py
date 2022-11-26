@@ -48,8 +48,5 @@ stats = "Restored model, accuracy: {:5.2f}% on {} data points".format(
     100 * test_accuracy, ndatapoints)	
 print(stats)
 
-# Plot the loss graph
-qualityLinePlot(history.history['loss'])
-
-# Plot the accuracy graph
-# qualityLinePlot(history.history['accuracy'])
+# Plot loss and accuracy graphs
+qualityLinePlot(history)
