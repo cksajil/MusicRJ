@@ -38,7 +38,7 @@ source envname/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-**Excecute the following Jupyter Notebooks/Scripts in the orde givenr**
+**Excecute the following Jupyter Notebooks/Scripts in the orde given**
 
 	 1. dataProcessing.py
 	 2. dlModeling.py
