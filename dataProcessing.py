@@ -23,11 +23,11 @@ for file in tqdm(Corpusfiles):
     x, Fs = librosa.load(CorpusPath+file)
     segments = strided_app(x, L=frameS, S=offset)
     for _ in range(64):
-        k = np.random.randint(0, 10332, dtype=int)
-        segment = segments[k]
-        Fcol.append(file)
-        row = np.abs(np.fft.fft(segment))
-        spectrumData = np.vstack([spectrumData, row])
+        ids = np.random.randint(10, size=2)
+        for segment in segments[ids, :]:
+            Fcol.append(file)
+            row = np.abs(np.fft.fft(segment))
+            spectrumData = np.vstack([spectrumData, row])
 
 spectrumDF = pd.DataFrame(spectrumData, columns=spectrumCol)
 spectrumDF['Filename'] = Fcol
