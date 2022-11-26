@@ -1,14 +1,15 @@
 # Import libraries
 import os
-import keras
 import pandas as pd
 import tensorflow as tf
-import matplotlib.pyplot as plt
-from tensorflow.python.keras.layers import Dense
+from keras.models import Sequential
+from keras.layers import Dense
 from sklearn.model_selection import train_test_split
-from tensorflow.python.keras.models import Sequential
-from tensorflow.python.keras.initializers import RandomUniform
+from tensorflow.keras.initializers import RandomUniform
+from tensorflow.keras.callbacks import ModelCheckpoint
+from keras.optimizers import RMSprop
 from plotter.plots import qualityLinePlot
+
 
 # Import refined dataSet
 datasrc = 'MasterData.csv'
@@ -45,7 +46,7 @@ def create_model():
 		kernel_initializer = RandomUniform(minval=-0.05, maxval=0.05),\
 		kernel_regularizer = tf.keras.regularizers.l2(0.001),\
 	 	activation = tf.nn.softmax))
-	model.compile(optimizer = keras.optimizers.RMSprop(learning_rate=0.0001),\
+	model.compile(optimizer = RMSprop(learning_rate=0.0001),\
 		loss='sparse_categorical_crossentropy',\
 		metrics=['accuracy'])
 	return model
@@ -58,9 +59,9 @@ checkpoint_path = "./TrainedModel/"
 checkpoint_dir = os.path.dirname(checkpoint_path)
 
 # Create a callback that saves the model's weights
-cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,\
-                                                 save_weights_only=True,\
-                                                 verbose=1)
+cp_callback = ModelCheckpoint(filepath=checkpoint_path,\
+	save_weights_only=True,\
+	verbose=1)
 
 # Train the model with callback
 history = model.fit(X_train,\
@@ -85,17 +86,7 @@ stats = "Restored model, accuracy: {:5.2f}\% on {} data points".format(100 * acc
 print(stats)
 
 # Plot the loss graph
-qualityLinePlot(history.history['loss'])
+# qualityLinePlot(history.history['loss'])
 
 # Plot the accuracy graph
-fig2, ax = plt.subplots()
-fig1.subplots_adjust(left=.16, bottom=.2, right=.99, top=.97)
-plt.plot(history.history['accuracy'])
-plt.plot(history.history['val_accuracy'])
-plt.xlabel('Epochs')
-plt.ylabel('Accuracy')
-plt.title(stats)
-plt.legend(['Training', 'Validation'], loc = 'upper right')
-fig2.set_size_inches(width, height)
-plt.savefig('./Graphs/Train_Valiation_Accuracy_'+str(ndatapoints)+'.png', dpi=300)
-plt.close()
+# qualityLinePlot(history.history['accuracy'])
