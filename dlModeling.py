@@ -20,16 +20,15 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # Create a basic model instance
-model = create_model()
+model = create_model(X_train[0].shape)
 
 # Give path to the location where trained model is to be saved
-checkpoint_path = "./TrainedModel/"
-checkpoint_dir = os.path.dirname(checkpoint_path)
+file_path = "./TrainedModel/best_model.hdf5"
+checkpoint_dir = os.path.dirname(file_path)
 
 # Create a callback that saves the model's weights
-cp_callback = ModelCheckpoint(
-    filepath=checkpoint_path, save_weights_only=True, verbose=1
-)
+cp_callback = ModelCheckpoint(filepath=file_path, monitor='val_accuracy',
+                              verbose=1, save_best_only=True, mode='auto')
 
 # Train the model with callback
 history = model.fit(
@@ -37,12 +36,10 @@ history = model.fit(
     callbacks=[cp_callback])
 
 # Load Saved Model
-modeltoDeploy = create_model()
+modeltoDeploy = create_model(X_train[0].shape)
 
 # Loads the weights
-checkpoint_path = "./TrainedModel/"
-checkpoint_dir = os.path.dirname(checkpoint_path)
-modeltoDeploy.load_weights(checkpoint_path)
+modeltoDeploy.load_weights(file_path)
 ndatapoints = features.shape[0]
 
 # Re-evaluate the model
