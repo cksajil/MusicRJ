@@ -9,4 +9,4 @@ __pycache__/
 venv/
 
 #Data files
-Data/*
+Data/MasterData.csv
