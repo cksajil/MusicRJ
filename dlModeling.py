@@ -8,17 +8,7 @@ from tensorflow.python.keras.layers import Dense
 from sklearn.model_selection import train_test_split
 from tensorflow.python.keras.models import Sequential
 from tensorflow.python.keras.initializers import RandomUniform
-
-# Set values for clean data visualization
-labelsize = 12
-width = 5
-height = width / 1.618
-
-plt.rc('font', family = 'serif')
-plt.rc('text', usetex = True)
-plt.rc('xtick', labelsize = labelsize)
-plt.rc('ytick', labelsize = labelsize)
-plt.rc('axes', labelsize = labelsize)
+from plotter.plots import qualityLinePlot
 
 # Import refined dataSet
 datasrc = 'MasterData.csv'
@@ -95,17 +85,7 @@ stats = "Restored model, accuracy: {:5.2f}\% on {} data points".format(100 * acc
 print(stats)
 
 # Plot the loss graph
-fig1, ax = plt.subplots()
-fig1.subplots_adjust(left=.16, bottom=.2, right=.99, top=.90)
-plt.plot(history.history['loss'])
-plt.plot(history.history['val_loss'])
-plt.xlabel('Epochs')
-plt.ylabel('Loss')
-plt.title(stats)
-plt.legend(['Training', 'Validation'], loc='upper left')
-fig1.set_size_inches(width, height)
-plt.savefig('./Graphs/Train_Valiation_Loss_'+str(ndatapoints)+'.png', dpi=300)
-plt.close()
+qualityLinePlot(history.history['loss'])
 
 # Plot the accuracy graph
 fig2, ax = plt.subplots()
