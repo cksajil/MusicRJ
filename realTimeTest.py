@@ -44,20 +44,19 @@ data = wf.readframes(CHUNK)
 freqData = np.empty((0, CHUNK), int)
 k = 0
 while len(data) > 0:
-    k += 1
     stream.write(data)
     idata = np.fromstring(data, np.int16)
     idata = np.abs(np.fft.fft(idata))
-    T = np.sum(idata)/np.max(idata)
-    if T > 10:
-        row = [list(idata)]
-        if k % 10 == 0:
-            try:
-                predictions = probability_model.predict(row)
-                index = np.argmax(predictions[0])
-                print(classes[index])
-            except Exception as e:
-                raise
+    threshold = np.sum(idata)
+    row = [list(idata)]
+    if k % 17 == 0:
+        if threshold < 1000000:
+            print('Silence')
+        else:
+            predictions = probability_model.predict(row)
+            index = np.argmax(predictions[0])
+            print(classes[index])
+    k += 1
     data = wf.readframes(CHUNK)
 
 # Stop stream once done
