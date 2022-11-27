@@ -41,6 +41,38 @@ source envname/bin/activate
 ```console
 python -m pip install -r requirements.txt
 ```
+### Model 1 (Simple DNN) Architecture
+
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense (Dense)               (None, 32)                8224      
+                                                                 
+ dense_1 (Dense)             (None, 64)                2112      
+                                                                 
+ dense_2 (Dense)             (None, 128)               8320      
+                                                                 
+ dense_3 (Dense)             (None, 256)               33024     
+                                                                 
+ dense_4 (Dense)             (None, 512)               131584    
+                                                                 
+ dense_5 (Dense)             (None, 256)               131328    
+                                                                 
+ dense_6 (Dense)             (None, 128)               32896     
+                                                                 
+ dropout (Dropout)           (None, 128)               0         
+                                                                 
+ dense_7 (Dense)             (None, 64)                8256      
+                                                                 
+ dense_8 (Dense)             (None, 2)                 130       
+                                                                 
+=================================================================
+Total params: 355,874
+Trainable params: 355,874
+Non-trainable params: 0
+_________________________________________________________________
+
 
 **Excecute the following python scripts in the order given**
 
