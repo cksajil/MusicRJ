@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 from utils.general import strided_app
+from sklearn.preprocessing import normalize
 
 basicdata = pd.read_csv('./Data/BasicData.csv')
 CorpusPath = './Data/Files/'

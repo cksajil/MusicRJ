@@ -32,7 +32,7 @@ cp_callback = ModelCheckpoint(filepath=file_path, monitor='val_accuracy',
 
 # Train the model with callback
 history = model.fit(
-    X_train, y_train, batch_size=32, epochs=20, validation_split=0.20,
+    X_train, y_train, batch_size=32, epochs=20, validation_split=0.30,
     callbacks=[cp_callback])
 
 # Load Saved Model
