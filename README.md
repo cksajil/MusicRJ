@@ -46,4 +46,4 @@ python -m pip install -r requirements.txt
 
 # Train and validation loss graph
 
-![Block Diagram](https://github.com/cksajil/MusicRJ/blob/master/Images/BlockDGMSmall.png)
+![Loss graph](https://github.com/cksajil/MusicRJ/blob/master/Graphs/Train_Valiation_Loss.png)
