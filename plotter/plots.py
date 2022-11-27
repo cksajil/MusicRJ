@@ -20,7 +20,7 @@ def qualityLinePlot(history, labelsize=12, width=5):
     plt.ylabel('Loss')
     plt.legend(['Training', 'Validation'], loc='upper left')
     fig1.set_size_inches(width, height)
-    plt.savefig('./Graphs/Train_Valiation_Loss.png', dpi=300)
+    plt.savefig('./Graphs/Train_Valiation_Loss.png', dpi=150)
     plt.close()
 
     fig2, ax2 = plt.subplots()
@@ -31,5 +31,5 @@ def qualityLinePlot(history, labelsize=12, width=5):
     plt.ylabel('Accuracy')
     plt.legend(['Training', 'Validation'], loc='upper right')
     fig2.set_size_inches(width, height)
-    plt.savefig('./Graphs/Train_Valiation_Accuracy.png', dpi=300)
+    plt.savefig('./Graphs/Train_Valiation_Accuracy.png', dpi=150)
     plt.close()
