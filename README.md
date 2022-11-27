@@ -15,7 +15,7 @@ The programme schedule often goes in a pattern like music, talk, interview, and 
 
 ![Block Diagram](https://github.com/cksajil/MusicRJ/blob/master/Images/BlockDGMSmall.png)
 
-**Dataset**:
+**Dataset**
 
 The project use the dataset **[DataGTZAN music/speech collection](http://opihi.cs.uvic.ca/sound/music_speech.tar.gz)**. All the wav audio files should be extracted to the *Data/Files* folder.
 
