@@ -43,6 +43,7 @@ python -m pip install -r requirements.txt
 ```
 ### Model 1 (Simple DNN) Architecture
 
+```console
 Model: "sequential"
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
@@ -72,7 +73,7 @@ Total params: 355,874
 Trainable params: 355,874
 Non-trainable params: 0
 _________________________________________________________________
-
+```
 
 **Excecute the following python scripts in the order given**
 
