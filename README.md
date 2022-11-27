@@ -43,3 +43,6 @@ python -m pip install -r requirements.txt
 	 1. dataProcessing.py
 	 2. dlModeling.py
 	 3. realTimeTest.py
+
+*Train and validation loss graph*
+![Block Diagram](https://github.com/cksajil/MusicRJ/blob/master/Images/BlockDGMSmall.png)
