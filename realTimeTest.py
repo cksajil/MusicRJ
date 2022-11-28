@@ -17,6 +17,8 @@ RECORD_SECONDS = 30
 # Initialize model
 modeltoDeploy = create_model((CHUNK,))
 
+print(modeltoDeploy.summary())
+
 # Loads the weights
 file_path = "./TrainedModel/best_model.hdf5"
 modeltoDeploy.load_weights(file_path)
