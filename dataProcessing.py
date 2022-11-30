@@ -1,21 +1,12 @@
-import yaml
 import librosa
 import numpy as np
 from os import path
 import pandas as pd
 from tqdm import tqdm
-from utils.general import strided_app
+from utils.general import strided_app, load_config
 
 
 def main():
-
-    CONFIG_PATH = "./config/"
-
-    def load_config(config_name):
-        with open(path.join(CONFIG_PATH, config_name)) as file:
-            config = yaml.safe_load(file)
-
-        return config
 
     config = load_config("my_config.yaml")
     basicdata = pd.read_csv(path.join(config["data_directory"],

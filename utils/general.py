@@ -1,10 +1,19 @@
+import yaml
 import numpy as np
+from os import path
 import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import Dense
 from tensorflow.keras.initializers import RandomUniform
-from keras.optimizers import RMSprop
 from tensorflow.keras.regularizers import l2
+
+
+def load_config(config_name):
+    CONFIG_PATH = "./config/"
+    with open(path.join(CONFIG_PATH, config_name)) as file:
+        config = yaml.safe_load(file)
+
+    return config
 
 
 def strided_app(a, L, S):
