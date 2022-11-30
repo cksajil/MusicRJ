@@ -1,13 +1,26 @@
+import yaml
 import librosa
 import numpy as np
+from os import path
 import pandas as pd
 from tqdm import tqdm
 from utils.general import strided_app
 
 
 def main():
-    basicdata = pd.read_csv('./Data/BasicData.csv')
-    CorpusPath = './Data/Files/'
+
+    CONFIG_PATH = "./config/"
+
+    def load_config(config_name):
+        with open(path.join(CONFIG_PATH, config_name)) as file:
+            config = yaml.safe_load(file)
+
+        return config
+
+    config = load_config("my_config.yaml")
+    basicdata = pd.read_csv(path.join(config["data_directory"],
+                            config["basic_data"]))
+    CorpusPath = path.join(config["data_directory"], config["file_directory"])
     Corpusfiles = basicdata['Filename'].values
 
     # Segement size and overlapp offset value
@@ -35,7 +48,8 @@ def main():
 
     # Combine basic data with features computed
     masterdata = pd.merge(basicdata, spectrumDF, on='Filename')
-    masterdata.to_csv('./Data/MasterData.csv', index=False)
+    masterdata.to_csv(path.join(config["data_directory"],
+                                config["master_data"]), index=False)
 
 
 if __name__ == '__main__':
