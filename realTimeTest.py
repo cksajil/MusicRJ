@@ -17,7 +17,7 @@ def main():
     print(modeltoDeploy.summary())
 
     # Loads the weights
-    file_path = "./TrainedModel/best_model.hdf5"
+    file_path = "./TrainedModel/dnn_best_model.hdf5"
     modeltoDeploy.load_weights(file_path)
 
     # Create a probability models and labels for prediction
