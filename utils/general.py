@@ -25,5 +25,9 @@ def strided_app(a, L, S):
 
 
 def create_model(in_shape):
-    dnn_model = myDNN(in_shape)
-    return dnn_model
+    config = load_config("my_config.yaml")
+    if config['default_model'] == 'myDNN':
+        model = myDNN(in_shape)
+    else:
+        pass
+    return model
