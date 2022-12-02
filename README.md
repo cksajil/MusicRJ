@@ -85,3 +85,5 @@ _________________________________________________________________
 ### Train and validation loss graph
 
 ![Loss graph](/Graphs/Train_Valiation_Loss.png)
+
+<img src="/Graphs/Train_Valiation_Loss.png" width="400" />
