@@ -13,7 +13,8 @@ I like music and would like to listen to it from FM radio channels. One good fea
 
 The programme schedule often goes in a pattern like music, talk, interview, and chat and so on. It would be nice if we can have a personal AI assistant (Mobile Application) which listens to such programs, records music which might be interesting to us, gather and summarise information from the Radio Jockey (RJ) talks. Since I have my background in audio signal processing, I was particularly interested in this project and wanted to give a try. 
 
-<img src="https://github.com/cksajil/MusicRJ/blob/master/Images/BlockDGMSmall.png">
+![Block diagram](https://github.com/cksajil/MusicRJ/blob/master/Images/BlockDGMSmall.png?raw=true)
+
 
 **Dataset**
 
@@ -83,4 +84,4 @@ _________________________________________________________________
 
 ### Train and validation loss graph
 
-![Loss graph](https://github.com/cksajil/MusicRJ/blob/master/Graphs/Train_Valiation_Loss.png)
+![Loss graph](https://github.com/cksajil/MusicRJ/blob/master/Graphs/Train_Valiation_Loss.png?raw=true)
