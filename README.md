@@ -86,4 +86,4 @@ _________________________________________________________________
 
 ![Loss graph](/Graphs/Train_Valiation_Loss.png)
 
-<img src="/Graphs/Train_Valiation_Loss.png" width="400" />
+<img src="https://github.com/cksajil/MusicRJ/blob/master/Images/BlockDGMSmall.png" width="400" />
