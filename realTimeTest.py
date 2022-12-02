@@ -3,12 +3,16 @@ import wave
 import pyaudio
 import numpy as np
 import pandas as pd
-from utils.general import create_model
+from os import path
 from keras.models import Sequential
 from tensorflow.keras.layers import Softmax
+from utils.general import create_model, load_config
 
 
 def main():
+
+    config = load_config("my_config.yaml")
+
     # Set the streaming audio settings
     CHUNK = 256
 
@@ -17,7 +21,7 @@ def main():
     print(modeltoDeploy.summary())
 
     # Loads the weights
-    file_path = "./TrainedModel/dnn_best_model.hdf5"
+    file_path = path.join(config["model_directory"], config["dnn_model_name"])
     modeltoDeploy.load_weights(file_path)
 
     # Create a probability models and labels for prediction
@@ -25,9 +29,11 @@ def main():
     probability_model = Sequential([modeltoDeploy, Softmax()])
 
     # Load a random file to test
-    testfiles = pd.read_csv('./Data/BasicData.csv')['Filename'].values
+    random_file_path = path.join(config["data_directory"], config["basic_data"])
+    testfiles = pd.read_csv(random_file_path)['Filename'].values
     testfile = np.random.choice(testfiles)
-    wf = wave.open('./Data/Files/'+testfile, 'rb')
+    audio_file_dir = path.join(config["data_directory"], config["file_directory"])
+    wf = wave.open(audio_file_dir+testfile, 'rb')
 
     # Create a PyAudio handle to read, test, and play
     p = pyaudio.PyAudio()
