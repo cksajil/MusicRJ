@@ -85,5 +85,3 @@ _________________________________________________________________
 ### Train and validation loss graph
 
 ![Loss graph](/Graphs/Train_Valiation_Loss.png)
-
-<img src="https://github.com/cksajil/MusicRJ/blob/master/Images/BlockDGMSmall.png" width="400" />
