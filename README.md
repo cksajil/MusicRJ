@@ -38,6 +38,10 @@ python -m venv envname
 ```console
 source envname/bin/activate
 ```
+*Upgrade PIP*
+```console
+python -m pip install --upgrade pip
+```
 *Installing Packages*
 ```console
 python -m pip install -r requirements.txt
