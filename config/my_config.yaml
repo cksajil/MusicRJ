@@ -3,6 +3,8 @@ data_directory: ./Data/
 file_directory: ./Files/
 basic_data: BasicData.csv
 master_data: MasterData.csv
+cnn_X_data: cnn_X.npy
+cnn_y_data: cnn_y.npy
 test_size: 0.2
 model_directory: ./TrainedModel/
 dnn_model_name: dnn_best_model.hdf5
