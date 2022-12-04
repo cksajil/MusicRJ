@@ -21,8 +21,9 @@ The project use the dataset **[DataGTZAN music/speech collection](http://opihi.c
 All the wav audio files should be extracted to the *Data/Files* folder.
 
 **Python Version**
-
+```
 Python 3.9.12
+```
 
 **Virtual Environment**
 
