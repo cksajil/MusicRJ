@@ -13,7 +13,6 @@ This is a Machine Learning-Audio Signal Processing Project where a real-time aud
 
 ![Block diagram](/Images/BlockDGMSmall.png)
 
-
 **Dataset**
 
 The project use the dataset **[DataGTZAN music/speech collection](http://opihi.cs.uvic.ca/sound/music_speech.tar.gz)**. 
