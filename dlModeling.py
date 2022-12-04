@@ -5,23 +5,19 @@ from sklearn.model_selection import train_test_split
 from tensorflow.keras.callbacks import ModelCheckpoint
 from plotter.plots import qualityLinePlot
 from utils.general import create_model, load_config
+from utils.data_loader import DataLoader
 
 
 def main():
 
     config = load_config("my_config.yaml")
-
-    essentialdata = pd.read_csv(path.join(config["data_directory"],
-                                          config["master_data"])).dropna()
-    essentialdata = essentialdata.replace({'Speech': 0, 'Music': 1})
-    essentialdata = essentialdata.sample(frac=1)
-
-    features = essentialdata.drop(['Filename', 'Label'], axis=1).values
-    labels = essentialdata.loc[:, ['Label']].values
+    data_loader = DataLoader()
+    data_loader.load_data()
 
     # Perform Train-Test Split
     X_train, X_test, y_train, y_test = train_test_split(
-        features, labels, test_size=config["test_size"], shuffle=True
+        data_loader.features, data_loader.labels,
+        test_size=config["test_size"], shuffle=True
     )
 
     # Create a basic model instance
@@ -45,7 +41,7 @@ def main():
 
     # Loads the weights
     modeltoDeploy.load_weights(file_path)
-    ndatapoints = features.shape[0]
+    ndatapoints = data_loader.features.shape[0]
 
     # Re-evaluate the model
     loss, test_accuracy = modeltoDeploy.evaluate(X_test, y_test, verbose=2)
