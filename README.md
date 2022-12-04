@@ -86,6 +86,6 @@ _________________________________________________________________
 	 2. dlModeling.py
 	 3. realTimeTest.py
 
-### Train and validation loss graph
+### Model 1 Train and validation loss graph
 
 ![Loss graph](https://i.ibb.co/m5kczP3/Train-Valiation-Loss.png)
