@@ -16,7 +16,8 @@ This is a Machine Learning-Audio Signal Processing Project where a real-time aud
 
 **Dataset**
 
-The project use the dataset **[DataGTZAN music/speech collection](http://opihi.cs.uvic.ca/sound/music_speech.tar.gz)**. All the wav audio files should be extracted to the *Data/Files* folder.
+The project use the dataset **[DataGTZAN music/speech collection](http://opihi.cs.uvic.ca/sound/music_speech.tar.gz)**. 
+All the wav audio files should be extracted to the *Data/Files* folder.
 
 **Python Version**
 
