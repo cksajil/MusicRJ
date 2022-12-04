@@ -1,7 +1,7 @@
 
 # MusicRJ
 
-## A Machine Learning-Audio Signal Processing Project
+## A Machine Learning-Audio Signal Processing Project (Ongoing)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/17DN_dJCyYJFQdBeyqKmcbwiIZH5ihE1z?usp=sharing)
 
