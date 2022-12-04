@@ -3,8 +3,6 @@
 
 ## A Machine Learning-Audio Signal Processing Project (Ongoing)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/17DN_dJCyYJFQdBeyqKmcbwiIZH5ihE1z?usp=sharing)
-
 ### [To See Demo Video Click Here](https://www.youtube.com/watch?v=9X55T_ffNwg&t=224s)
 
 **Project Details** 
