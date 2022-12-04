@@ -11,7 +11,7 @@
 
 This is a Machine Learning-Audio Signal Processing Project where a real-time audio signal is classified into speech or music using Deep Neural Network and Convolutional Network. The long term goal is to create an AI personal assistant which listens to audio streams and summarize its content to the end user.
 
-![Block diagram](\Images\BlockDGMSmall.png)
+![Block diagram](https://i.ibb.co/5Y11jkp/Block-DGMSmall.png)
 
 **Dataset**
 
