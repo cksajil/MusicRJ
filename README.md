@@ -88,4 +88,4 @@ _________________________________________________________________
 
 ### Train and validation loss graph
 
-![Loss graph](https://i.ibb.co/5hmRcJP/Train-Valiation-Loss.png)
+![Loss graph](https://i.ibb.co/m5kczP3/Train-Valiation-Loss.png)
