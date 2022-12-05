@@ -78,11 +78,20 @@ Non-trainable params: 0
 _________________________________________________________________
 ```
 
-**Excecute the following python scripts in the order given**
+**Data Preprocessing**
+```console
+python dataProcessing.py
+```
 
-	 1. dataProcessing.py
-	 2. dlModeling.py
-	 3. realTimeTest.py
+**Model Training**
+```console
+python dlModeling.py
+```
+
+**Real-time Demonstration**
+```console
+python realTimeTest.py
+```
 
 ### Model 1 Train and validation loss graph
 
