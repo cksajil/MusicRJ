@@ -22,7 +22,7 @@ All the wav audio files should be extracted to the *Data/Files* folder.
 Python 3.9.12
 ```
 
-### Virtual Environment
+### Setting up virtual environment
 
 *Installing Virtual Environment*
 ```console
@@ -44,6 +44,20 @@ python -m pip install --upgrade pip
 ```console
 python -m pip install -r requirements.txt
 ```
+
+### How to run
+
+```console
+#Data preprocessing
+python dataProcessing.py
+
+#Model Training
+python dlModeling.py
+
+#Real-time Demonstration
+python realTimeTest.py
+```
+
 ### Model 1 (Simple DNN) Architecture
 
 ```console
@@ -76,21 +90,6 @@ Total params: 355,874
 Trainable params: 355,874
 Non-trainable params: 0
 _________________________________________________________________
-```
-
-### Data Preprocessing
-```console
-python dataProcessing.py
-```
-
-### Model Training
-```console
-python dlModeling.py
-```
-
-### Real-time Demonstration
-```console
-python realTimeTest.py
 ```
 
 ### Model 1 Train and validation loss graph
