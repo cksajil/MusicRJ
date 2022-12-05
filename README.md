@@ -5,13 +5,13 @@
 
 ### [To see demo video, click here](https://www.youtube.com/watch?v=9X55T_ffNwg&t=224s)
 
-**Project Details** 
+### Project Details
 
 This is a Machine Learning-Audio Signal Processing Project where a real-time audio signal is classified into speech or music using Deep Neural Network and Convolutional Network. The long term goal is to create an AI personal assistant which listens to audio streams and summarize its content to the end user.
 
 ![Block diagram](https://i.ibb.co/5Y11jkp/Block-DGMSmall.png)
 
-**Dataset**
+### Dataset
 
 The project use the dataset **[DataGTZAN music/speech collection](http://opihi.cs.uvic.ca/sound/music_speech.tar.gz)**. 
 
@@ -22,7 +22,7 @@ All the wav audio files should be extracted to the *Data/Files* folder.
 Python 3.9.12
 ```
 
-**Virtual Environment**
+### Virtual Environment
 
 *Installing Virtual Environment*
 ```console
@@ -78,17 +78,17 @@ Non-trainable params: 0
 _________________________________________________________________
 ```
 
-**Data Preprocessing**
+### Data Preprocessing
 ```console
 python dataProcessing.py
 ```
 
-**Model Training**
+### Model Training
 ```console
 python dlModeling.py
 ```
 
-**Real-time Demonstration**
+### Real-time Demonstration
 ```console
 python realTimeTest.py
 ```
