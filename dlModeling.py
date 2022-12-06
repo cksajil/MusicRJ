@@ -36,7 +36,9 @@ def main():
 
     # Train the model with callback
     history = model.fit(
-        X_train, y_train, batch_size=32, epochs=20,
+        X_train, y_train,
+        batch_size=config["batch_size"],
+        epochs=config["epochs"],
         validation_split=config["test_size"],
         callbacks=[cp_callback])
 
