@@ -12,8 +12,11 @@ def main():
     # Segement size and overlapp offset value
     frameS = 256
     offset = 64
-    generateCNNData(basicdata, frameS=frameS, offset=offset)
-    generateDNNData(basicdata, frameS=frameS, offset=offset)
+
+    if config['default_model'] == 'myDNN':
+        generateDNNData(basicdata, frameS=frameS, offset=offset)
+    else:
+        generateCNNData(basicdata, frameS=frameS, offset=offset)
 
 
 if __name__ == '__main__':

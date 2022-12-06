@@ -18,12 +18,17 @@ def main():
         data_loader.features, data_loader.labels,
         test_size=config["test_size"], shuffle=True
     )
-
+    print(data_loader.features.shape)
     # Create a basic model instance
     model = create_model(X_train[0].shape)
 
     # Give path to the location where trained model is to be saved
-    file_path = path.join(config["model_directory"], config["dnn_model_name"])
+    if config['default_model'] == 'myDNN':
+        file_path = path.join(config["model_directory"],
+                              config["dnn_model_name"])
+    else:
+        file_path = path.join(config["model_directory"],
+                              config["cnn_model_name"])
 
     # Create a callback that saves the model's weights
     cp_callback = ModelCheckpoint(filepath=file_path, monitor='val_accuracy',

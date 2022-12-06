@@ -13,7 +13,7 @@ def myDNN(in_shape):
     model.add(Dense(64, activation='relu', input_shape=in_shape))
 
     model.add(Dense(128, kernel_initializer=RandomUniform(minval=-0.05,
-                    maxval=0.05), kernel_regularizer=l2(0.001), 
+                    maxval=0.05), kernel_regularizer=l2(0.001),
                     activation='relu'))
 
     model.add(Dense(256, kernel_initializer=RandomUniform(minval=-0.05,

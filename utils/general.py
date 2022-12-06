@@ -68,18 +68,19 @@ def generateDNNData(basicdata, frameS, offset):
 def generateCNNData(basicdata, frameS, offset):
     CorpusPath = path.join(config["data_directory"], config["file_directory"])
     labels = []
+    spectrumData = np.empty((0, 1292), int)
     for index, row in tqdm(basicdata.iterrows(), total=basicdata.shape[0]):
         x, Fs = librosa.load(CorpusPath+row['Filename'])
         spectro_data = np.abs(librosa.stft(x))
         segments = np.array_split(spectro_data, 10)
         for segment in segments:
-            labels.append(row['Label'])
-
-    segments = np.concatenate(segments, axis=0)
+            labels.extend([row['Label']]*segment.shape[0])
+        segments = np.concatenate(segments, axis=0)
+        spectrumData = np.vstack((spectrumData, segments))
     cnn_features_data_path = path.join(config["data_directory"],
                                        config["cnn_X_data"])
     cnn_labels_data_path = path.join(config["data_directory"],
                                      config["cnn_y_data"])
 
-    np.save(cnn_features_data_path, segments, allow_pickle=True)
+    np.save(cnn_features_data_path, spectrumData, allow_pickle=True)
     np.save(cnn_labels_data_path, labels, allow_pickle=True)
