@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from os import path
 from tqdm import tqdm
-from utils.dnn import myDNN
+from utils.dnn import myDNN, myCNN
 
 
 def load_config(config_name):
@@ -34,7 +34,7 @@ def create_model(in_shape):
     if config['default_model'] == 'myDNN':
         model = myDNN(in_shape)
     else:
-        pass
+        model = myCNN(in_shape)
     return model
 
 

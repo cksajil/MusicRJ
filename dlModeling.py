@@ -1,6 +1,5 @@
 # Import libraries
 from os import path
-import pandas as pd
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.callbacks import ModelCheckpoint
 from plotter.plots import qualityLinePlot
@@ -13,7 +12,7 @@ def main():
     config = load_config("my_config.yaml")
     data_loader = DataLoader()
     data_loader.load_data()
-    
+
     # Perform Train-Test Split
     X_train, X_test, y_train, y_test = train_test_split(
         data_loader.features, data_loader.labels,
