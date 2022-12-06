@@ -10,3 +10,4 @@ model_directory: ./TrainedModel/
 dnn_model_name: dnn_best_model.hdf5
 cnn_model_name: cnn_best_model.hdf5
 default_model: myDNN
+# default_model: myCNN

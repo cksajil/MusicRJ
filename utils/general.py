@@ -4,7 +4,8 @@ import numpy as np
 import pandas as pd
 from os import path
 from tqdm import tqdm
-from utils.dnn import myDNN, myCNN
+from utils.dnn import myDNN
+from utils.cnn import myCNN
 
 
 def load_config(config_name):
