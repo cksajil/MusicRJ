@@ -9,14 +9,14 @@ def main():
     basicdata = pd.read_csv(path.join(config["data_directory"],
                             config["basic_data"]))
 
-    # Segement size and overlapp offset value
-    frameS = 256
-    offset = 64
-
     if config['default_model'] == 'myDNN':
-        generateDNNData(basicdata, frameS=frameS, offset=offset)
+        generateDNNData(basicdata,
+                        frameS=config['FRAMES'],
+                        offset=config['OFFSET'])
     else:
-        generateCNNData(basicdata, frameS=frameS, offset=offset)
+        generateCNNData(basicdata,
+                        frameS=config['FRAMES'],
+                        offset=config['OFFSET'])
 
 
 if __name__ == '__main__':

@@ -63,7 +63,7 @@ def generateDNNData(basicdata, frameS, offset):
             ids = np.random.randint(10, size=2)
             for segment in segments[ids, :]:
                 Fcol.append(file)
-                row = np.abs(np.fft.fft(segment))
+                row = np.abs(np.fft.fft(segment)) #256d vector
                 spectrumData = np.vstack([spectrumData, row])
     spectrumDF = pd.DataFrame(spectrumData, columns=spectrumCol)
     spectrumDF['Filename'] = Fcol
