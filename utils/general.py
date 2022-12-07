@@ -39,6 +39,14 @@ def create_model(in_shape):
     return model
 
 
+def mapLabels(x):
+    if x == 'Music':
+        flag = 1
+    else:
+        flag = 0
+    return flag
+
+
 def generateDNNData(basicdata, frameS, offset):
     CorpusPath = path.join(config["data_directory"], config["file_directory"])
     Corpusfiles = basicdata['Filename'].values
@@ -80,10 +88,7 @@ def generateCNNData(basicdata, frameS, offset):
                 segmentData.append(segment_padded)
             else:
                 segmentData.append(segment)
-            if row['Label'][0] == 'Music':
-                flag = 1
-            else:
-                flag = 0
+            flag = mapLabels(row['Label'][0])
             labels.append(flag)
     cnn_features_data_path = path.join(config["data_directory"],
                                        config["cnn_X_data"])
