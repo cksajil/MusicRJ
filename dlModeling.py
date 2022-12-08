@@ -4,8 +4,8 @@ from utils.data_loader import DataLoader
 from plotter.plots import qualityLinePlot
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.callbacks import ModelCheckpoint
-from utils.general import create_model, load_config
 from utils.call_backs import EarlyStopper
+from utils.general import create_model, load_config, selectModel
 
 
 def main():
@@ -24,12 +24,7 @@ def main():
     model = create_model(X_train[0].shape)
 
     # Give path to the location where trained model is to be saved
-    if config['default_model'] == 'myDNN':
-        file_path = path.join(config["model_directory"],
-                              config["dnn_model_name"])
-    else:
-        file_path = path.join(config["model_directory"],
-                              config["cnn_model_name"])
+    file_path = selectModel()
 
     # Create a callback that saves the model's weights
     cp_callback = ModelCheckpoint(filepath=file_path, monitor='val_accuracy',

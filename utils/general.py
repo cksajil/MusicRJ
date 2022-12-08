@@ -19,6 +19,16 @@ def load_config(config_name):
 config = load_config("my_config.yaml")
 
 
+def selectModel():
+    if config['default_model'] == 'myDNN':
+        file_path = path.join(config["model_directory"],
+                              config["dnn_model_name"])
+    else:
+        file_path = path.join(config["model_directory"],
+                              config["cnn_model_name"])
+    return file_path
+
+
 def strided_app(a, L, S):
     """
     Function to split audio as overlapping segments

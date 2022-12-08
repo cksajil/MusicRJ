@@ -6,7 +6,7 @@ import pandas as pd
 from os import path
 from keras.models import Sequential
 from tensorflow.keras.layers import Softmax
-from utils.general import create_model, load_config
+from utils.general import create_model, load_config, selectModel
 
 
 def main():
@@ -21,12 +21,7 @@ def main():
     print(modeltoDeploy.summary())
 
     # Select Model and Loads the weights
-    if config['default_model'] == 'myDNN':
-        file_path = path.join(config["model_directory"],
-                              config["dnn_model_name"])
-    else:
-        file_path = path.join(config["model_directory"],
-                              config["cnn_model_name"])
+    file_path = selectModel()
     
     modeltoDeploy.load_weights(file_path)
 
@@ -42,7 +37,7 @@ def main():
 
     audio_file_dir = path.join(config["data_directory"],
                                config["file_directory"])
-                               
+
     wf = wave.open(audio_file_dir+testfile, 'rb')
 
     # Create a PyAudio handle to read, test, and play
