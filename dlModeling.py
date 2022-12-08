@@ -1,10 +1,11 @@
 # Import libraries
 from os import path
+from utils.data_loader import DataLoader
+from plotter.plots import qualityLinePlot
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.callbacks import ModelCheckpoint
-from plotter.plots import qualityLinePlot
 from utils.general import create_model, load_config
-from utils.data_loader import DataLoader
+from utils.call_backs import EarlyStopper
 
 
 def main():
@@ -34,13 +35,16 @@ def main():
     cp_callback = ModelCheckpoint(filepath=file_path, monitor='val_accuracy',
                                   verbose=1, save_best_only=True, mode='auto')
 
+    early_stopper_cb = EarlyStopper(0.9501)
+
     # Train the model with callback
     history = model.fit(
         X_train, y_train,
         batch_size=config["batch_size"],
         epochs=config["epochs"],
         validation_split=config["test_size"],
-        callbacks=[cp_callback])
+        callbacks=[cp_callback,
+                   early_stopper_cb])
 
     # Load Saved Model
     modeltoDeploy = create_model(X_train[0].shape)
