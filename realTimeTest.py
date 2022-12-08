@@ -14,14 +14,20 @@ def main():
     config = load_config("my_config.yaml")
 
     # Set the streaming audio settings
-    CHUNK = 256
+    CHUNK = config['FRAMES']
 
     # Initialize model
     modeltoDeploy = create_model((CHUNK,))
     print(modeltoDeploy.summary())
 
-    # Loads the weights
-    file_path = path.join(config["model_directory"], config["dnn_model_name"])
+    # Select Model and Loads the weights
+    if config['default_model'] == 'myDNN':
+        file_path = path.join(config["model_directory"],
+                              config["dnn_model_name"])
+    else:
+        file_path = path.join(config["model_directory"],
+                              config["cnn_model_name"])
+    
     modeltoDeploy.load_weights(file_path)
 
     # Create a probability models and labels for prediction
@@ -29,10 +35,14 @@ def main():
     probability_model = Sequential([modeltoDeploy, Softmax()])
 
     # Load a random file to test
-    random_file_path = path.join(config["data_directory"], config["basic_data"])
+    random_file_path = path.join(config["data_directory"],
+                                 config["basic_data"])
     testfiles = pd.read_csv(random_file_path)['Filename'].values
     testfile = np.random.choice(testfiles)
-    audio_file_dir = path.join(config["data_directory"], config["file_directory"])
+
+    audio_file_dir = path.join(config["data_directory"],
+                               config["file_directory"])
+                               
     wf = wave.open(audio_file_dir+testfile, 'rb')
 
     # Create a PyAudio handle to read, test, and play
