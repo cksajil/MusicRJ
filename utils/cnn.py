@@ -5,6 +5,10 @@ from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 
 
 def myCNN(in_shape):
+    """
+    A Convolutional Neural Network with custom architecture for 
+    speech-music classification
+    """
     model = Sequential()
 
     model.add(Conv2D(32, kernel_size=(3, 3),

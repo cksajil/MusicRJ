@@ -3,6 +3,9 @@ from tensorflow.keras.callbacks import Callback
 
 
 class EarlyStopper(Callback):
+    """
+    A class for early stopper callback for validation accuracy
+    """
     def __init__(self, target):
         super(EarlyStopper, self).__init__()
         self.target = target

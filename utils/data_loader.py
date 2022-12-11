@@ -7,6 +7,9 @@ config = load_config("my_config.yaml")
 
 
 class DataLoader:
+    """
+    A data loader class for DNN and CNN models
+    """
 
     def __init__(self, mtype=config["default_model"]):
         self.mtype = mtype
@@ -14,6 +17,10 @@ class DataLoader:
         self.labels = None
 
     def load_data(self):
+        """
+        A function to load dataset with respect to the model as 
+        mentioned in the configuration settings
+        """
         if self.mtype == 'myDNN':
             data = pd.read_csv(path.join(config["data_directory"],
                                          config["master_data"])).dropna()

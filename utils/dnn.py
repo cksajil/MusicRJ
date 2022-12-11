@@ -6,6 +6,10 @@ from tensorflow.keras.regularizers import l2
 
 
 def myDNN(in_shape):
+    """
+    A function to create a Deep Neural Network model with custom 
+    architecture for speech-music classification
+    """
     model = Sequential()
 
     model.add(Dense(32, activation='relu', input_shape=in_shape))
