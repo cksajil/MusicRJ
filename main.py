@@ -17,7 +17,7 @@ def main():
         subprocess.call(['python', 'dataProcessing.py'])
 
     elif stage.s == 't':
-        pass
+        subprocess.call(['python', 'dlModeling.py'])
 
     elif stage.s == 'r':
         pass
