@@ -55,7 +55,7 @@ python main.py -s p
 python main.py -s t
 
 #Real-time Demonstration
-python realTimeTest.py
+python main.py -s r
 ```
 
 ### Model 1 (Simple DNN) Architecture
