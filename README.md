@@ -49,7 +49,7 @@ python -m pip install -r requirements.txt
 
 ```console
 #Data preprocessing
-python dataProcessing.py
+python main.py -s p
 
 #Model Training
 python dlModeling.py
