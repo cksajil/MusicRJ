@@ -1,4 +1,5 @@
 from argparse import ArgumentParser, RawTextHelpFormatter
+import subprocess
 
 
 def main():
@@ -13,7 +14,7 @@ def main():
     stage = parser.parse_args()
 
     if stage.s == 'p':
-        pass
+        subprocess.call(['python', 'dataProcessing.py'])
 
     elif stage.s == 't':
         pass
