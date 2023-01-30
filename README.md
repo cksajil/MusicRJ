@@ -52,7 +52,7 @@ python -m pip install -r requirements.txt
 python main.py -s p
 
 #Model Training
-python dlModeling.py
+python main.py -s t
 
 #Real-time Demonstration
 python realTimeTest.py
