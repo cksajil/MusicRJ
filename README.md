@@ -95,3 +95,34 @@ _________________________________________________________________
 ### Model 1 Train and validation loss graph
 
 ![Loss graph](https://i.ibb.co/m5kczP3/Train-Valiation-Loss.png)
+
+
+### Model 2 (CNN) Architecture
+
+```console
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)                (None, 101, 1290, 32)    320       
+                                                                 
+ max_pooling2d (MaxPooling2D)   (None, 50, 645, 32)      0         
+                                              
+ conv2d_1 (Conv2D)              (None, 48, 643, 64)      18496     
+                                                                 
+ max_pooling2d_1 (MaxPooling2D) (None, 24, 321, 64)      0         
+                                                                                   
+ conv2d_2 (Conv2D)              (None, 22, 319, 64)      36928     
+                                                                 
+ flatten (Flatten)              (None, 449152)           0         
+                                                                 
+ dense (Dense)                  (None, 64)               28745792  
+                                                                 
+ dense_1 (Dense)                (None, 2)                130       
+                                                                 
+=================================================================
+Total params: 28,801,666
+Trainable params: 28,801,666
+Non-trainable params: 0
+_________________________________________________________________
+```
