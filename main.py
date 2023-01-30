@@ -20,7 +20,7 @@ def main():
         subprocess.call(['python', 'dlModeling.py'])
 
     elif stage.s == 'r':
-        pass
+        subprocess.call(['python', 'realTimeTest.py'])
 
 
 if __name__ == '__main__':
