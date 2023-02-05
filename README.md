@@ -129,5 +129,5 @@ _________________________________________________________________
 
 ### Testing
 ```console
-pytest --verbose
+python -m pytest --verbose
 ```
