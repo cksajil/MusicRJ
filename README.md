@@ -126,3 +126,8 @@ Trainable params: 28,801,666
 Non-trainable params: 0
 _________________________________________________________________
 ```
+
+#### Testing Using Pytest
+```console
+pytest --verbose
+```
