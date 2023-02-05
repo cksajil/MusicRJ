@@ -127,7 +127,7 @@ Non-trainable params: 0
 _________________________________________________________________
 ```
 
-#### Testing Using Pytest
+### Testing
 ```console
 pytest --verbose
 ```
