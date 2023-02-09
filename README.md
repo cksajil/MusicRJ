@@ -1,6 +1,8 @@
 
 # MusicRJ
 
+![Basic Build](https://github.com/cksajil/MusicRJ/actions/workflows/github-actions-demo.yml/badge.svg?branch=actions)
+
 ## A Machine Learning-Audio Signal Processing Project (Ongoing)
 
 ### [To see demo video, click here](https://www.youtube.com/watch?v=9X55T_ffNwg&t=224s)
