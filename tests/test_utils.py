@@ -1,5 +1,6 @@
 from utils.general import load_config, selectModel
 from utils.general import strided_app, create_model
+from utils.general import mapLabels
 import numpy as np
 
 
@@ -20,3 +21,8 @@ def test_strided_app():
 
 def test_create_model():
     assert (create_model((256,)).output_shape) == (None, 2)
+
+
+def test_mapLabels():
+    assert mapLabels('Music') == 1
+    assert mapLabels('Speech') == 0
