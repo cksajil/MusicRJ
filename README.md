@@ -1,8 +1,8 @@
 
 # MusicRJ
 
-![Basic Build](https://github.com/cksajil/MusicRJ/actions/workflows/github-actions-demo.yml/badge.svg?branch=actions)
-![Basic Build](https://github.com/cksajil/MusicRJ/actions/workflows/pytest.yml/badge.svg?branch=actions)
+![Basic Build](https://github.com/cksajil/MusicRJ/actions/workflows/github-actions-demo.yml/badge.svg?branch=master)
+![Basic Build](https://github.com/cksajil/MusicRJ/actions/workflows/pytest.yml/badge.svg?branch=master)
 
 ## A Machine Learning-Audio Signal Processing Project (Ongoing)
 
