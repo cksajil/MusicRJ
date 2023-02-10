@@ -22,6 +22,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest
-          apt install libsndfile1
+          sudo apt-get install -y libsndfile1
       - name: Test with pytest
         run: python -m pytest --verbose
