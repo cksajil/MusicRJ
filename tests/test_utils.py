@@ -1,6 +1,7 @@
 from utils.general import load_config, selectModel
 from utils.general import strided_app, create_model
 from utils.general import mapLabels
+from utils.dnn import myDNN
 import numpy as np
 
 
@@ -26,3 +27,7 @@ def test_create_model():
 def test_mapLabels():
     assert mapLabels('Music') == 1
     assert mapLabels('Speech') == 0
+
+
+def test_myDNN():
+    assert myDNN((256,)).input_shape == (None, 256)
