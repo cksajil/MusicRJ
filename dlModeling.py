@@ -16,8 +16,10 @@ def main():
 
     # Perform Train-Test Split
     X_train, X_test, y_train, y_test = train_test_split(
-        data_loader.features, data_loader.labels,
-        test_size=config["test_size"], shuffle=True
+        data_loader.features,
+        data_loader.labels,
+        test_size=config["test_size"],
+        shuffle=True,
     )
     print(data_loader.features.shape)
     # Create a basic model instance
@@ -27,19 +29,25 @@ def main():
     file_path = selectModel()
 
     # Create a callback that saves the model's weights
-    cp_callback = ModelCheckpoint(filepath=file_path, monitor='val_accuracy',
-                                  verbose=1, save_best_only=True, mode='auto')
+    cp_callback = ModelCheckpoint(
+        filepath=file_path,
+        monitor="val_accuracy",
+        verbose=1,
+        save_best_only=True,
+        mode="auto",
+    )
 
     early_stopper_cb = EarlyStopper(0.9501)
 
     # Train the model with callback
     history = model.fit(
-        X_train, y_train,
+        X_train,
+        y_train,
         batch_size=config["batch_size"],
         epochs=config["epochs"],
         validation_split=config["test_size"],
-        callbacks=[cp_callback,
-                   early_stopper_cb])
+        callbacks=[cp_callback, early_stopper_cb],
+    )
 
     # Load Saved Model
     modeltoDeploy = create_model(X_train[0].shape)
@@ -51,12 +59,13 @@ def main():
     # Re-evaluate the model
     loss, test_accuracy = modeltoDeploy.evaluate(X_test, y_test, verbose=2)
     stats = "Restored model, accuracy: {:5.2f}% on {} data points".format(
-        100 * test_accuracy, ndatapoints)
+        100 * test_accuracy, ndatapoints
+    )
     print(stats)
 
     # Plot loss and accuracy graphs
     qualityLinePlot(history)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
