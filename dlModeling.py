@@ -1,5 +1,4 @@
 # Import libraries
-from os import path
 from utils.data_loader import DataLoader
 from plotter.plots import qualityLinePlot
 from sklearn.model_selection import train_test_split
