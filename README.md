@@ -86,7 +86,7 @@ Non-trainable params: 0
 _________________________________________________________________
 ```
 
-![dnn architecture]()
+![dnn architecture](https://github.com/cksajil/MusicRJ/blob/master/Images/dnn_model.png)
 
 
 ### Model 1 Train and validation loss graph
