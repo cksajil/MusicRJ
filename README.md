@@ -5,7 +5,7 @@
 
 ## A Machine Learning-Audio Signal Processing Project (Ongoing)
 
-### [To see demo video, click here](https://www.youtube.com/watch?v=9X55T_ffNwg&t=224s)
+### [To see demo video, click here](https://www.youtube.com/watch?v=9X55T_ffNwg&t=685s)
 
 ### Project Details
 
