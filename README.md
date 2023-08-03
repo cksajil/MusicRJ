@@ -47,6 +47,7 @@ python -m pip install --upgrade pip
 *Installing Packages*
 ```console
 python -m pip install -r requirements.txt
+pip install PyAudio
 ```
 
 ### How to run
